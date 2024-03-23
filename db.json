@@ -1,0 +1,19 @@
+{
+  "fotos": [
+    {
+      "id": "1",
+      "titulo": "Acrenimes",
+      "url": "https://imgs.search.brave.com/l91ZEpIdOy1VAsTF9EJOcT4ZLOPWrgCx0_YtSaa7d2M/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzdmLzE5/L2MzLzdmMTljMzVi/M2NiMzBkMDBkMzcw/YTgwYmI2MGU1MzFi/LmpwZw"
+    },
+    {
+      "id": "2",
+      "titulo": "Goku kakumei",
+      "url": "https://i.pinimg.com/736x/53/44/69/53446911bbcfcdb0fa125e0fc8c7237b.jpg"
+    },
+    {
+      "id": "674a",
+      "titulo": "Sung Jin Woo",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP5O7vRRn5zXlLxOpNEjSDkJC1Uq_NA42DLw&usqp=CAU"
+    }
+  ]
+}
