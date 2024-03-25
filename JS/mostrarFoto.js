@@ -6,40 +6,37 @@ async function listaFoto() {
 
     listarFotosApi.forEach(fotos => {
         fotos_html.innerHTML += `
-        <div class="foto">
+        <div class="foto" id="${fotos.id}">
             <h2 class="titulo_foto">${fotos.titulo}</h2>
             <img width="300" src="${fotos.url}">
-            <button >Adicionar</button>
-            <button id="${fotos.url}">Excluir</button>
+            <button id="editar"><a href="pages/editar_foto.html">Editar</a>
+            </button>
+            <button id="excluir">Excluir</button>
         </div>`;
     });
+    editar();
+    deletar();
 }
-  const urlw = "http://localhost:3000/fotos";
-
-   fetch(urlw, {
-    method: "DELETE", 
-    headers: {
-        "Content-Type": "Application/json", 
-    }, 
-   })
-
-.then(response => {
- if (!response.ok) {
-    throw new Error('Erro na requisição');
- }
- return response.json(); 
-})
-.then(data => {
- console.log('Recurso deletado com sucesso:', data);
-})
-.catch(error => {
- console.error('Erro ao deletar o recurso:', error);
-});
-
 
 
 listaFoto();
 
+function editar(){
+    const editarFotos = document.querySelectorAll("#editar");
+    
+
+}
+
+function deletar(){
+    const excluirFotos = document.querySelectorAll("#excluir");
+
+    excluirFotos.forEach(btn => {
+        btn.addEventListener("click", async () => {
+            const id = btn.parentNode.id
+            await ConexaoAPI.excluirFoto(id);
+        })
+    });
+}
 const barraDepesquisa = document.querySelector(".pesquisa");
 
 barraDepesquisa.addEventListener('input', filtro);

@@ -20,9 +20,33 @@ async function FotosDaAPI(titulo,url){
     return resposta;
 }
 
-    
+    async function editarFoto(id, titulo, url){
+        const conexao = await fetch(`http://localhost:3000/fotos/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-type": "application/json"
+            }, 
+            body: JSON.stringify({
+                titulo: titulo,
+                url: url
+            })
+    })
+    const resposta = await conexao.json();
+    return resposta;
+    }    
+
+   async function excluirFoto(id){
+    const conexao = await fetch(`http://localhost:3000/fotos/${id}`, {
+            method: "DELETE"
+    })
+    const resposta = await conexao.json();
+    return resposta;
+}
 
 export const ConexaoAPI = {
     api,
-    FotosDaAPI
+    FotosDaAPI,
+    excluirFoto,
+    editarFoto
+
 }
