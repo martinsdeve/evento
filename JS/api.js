@@ -46,7 +46,8 @@ async function FotosDaAPI(titulo,url){
 export const ConexaoAPI = {
     api,
     FotosDaAPI,
-    excluirFoto,
-    editarFoto
+    editarFoto,
+    excluirFoto
+   
 
 }

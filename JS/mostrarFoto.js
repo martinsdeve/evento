@@ -9,8 +9,7 @@ async function listaFoto() {
         <div class="foto" id="${fotos.id}">
             <h2 class="titulo_foto">${fotos.titulo}</h2>
             <img width="300" src="${fotos.url}">
-            <button id="editar"><a href="pages/editar_foto.html">Editar</a>
-            </button>
+            <button id="editar">Editar</button>
             <button id="excluir">Excluir</button>
         </div>`;
     });
@@ -23,8 +22,13 @@ listaFoto();
 
 function editar(){
     const editarFotos = document.querySelectorAll("#editar");
+    editarFotos.forEach(btn => {
+        btn.addEventListener('click', async () => {
+            const id = btn.parentNode.id
+        window.location.href = `../pages/editar_foto.html?id=${id}`;
+        })
+    })
     
-
 }
 
 function deletar(){
@@ -36,6 +40,7 @@ function deletar(){
             await ConexaoAPI.excluirFoto(id);
         })
     });
+    
 }
 const barraDepesquisa = document.querySelector(".pesquisa");
 
